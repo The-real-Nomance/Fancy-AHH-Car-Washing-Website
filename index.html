@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sparkle & Shine Car Wash</title>
+  <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, "Protest Strike", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #436850;
+      /* Updated background color */
+      color: #fff;
+      overflow-x: hidden;
+    }
+    /* Header Styles */
+    header {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      color: #FBFADA;
+      padding: 175px 0;
+      text-align: center;
+      z-index: 1000;
+      position: relative;
+      overflow: hidden;
+      animation: waveBackground 5s infinite alternate;
+    }
+
+    .header-image {
+      max-width: 200%; /* Adjust this value as needed */
+      height: auto;
+    }
+
+    @keyframes waveBackground {
+      0% {
+        background-position: 0 100%;
+      }
+      100% {
+        background-position: 100% 0%;
+      }
+    }
+    h1 {
+      font-size: 100px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 19px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    /* Section Styles */
+    .section {
+      padding: 50px 0;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(150px);
+      transition: opacity 1.5s ease, transform 1.5s ease;
+    }
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    /* Services Section */
+    .services {
+      background-color: #304d3a;
+      /* Updated background color */
+      color: #FFFFFF;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 25vh;
+      /* Adjust as needed */
+    }
+    .text {
+      text-align: center;
+    }
+
+/* Scrollbar Styles */
+/* width */
+::-webkit-scrollbar {
+  width: 12px; /* Set the width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #12372A; /* Set the background color of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ADBC9F; /* Set the color of the scrollbar handle */
+  border-radius: 10px; /* Set the border radius of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #78826f; /* Set the color of the scrollbar handle on hover */
+}
+
+/* For screens smaller than 768px */
+@media only screen and (max-width: 768px) {
+  /* Adjust styles for header */
+  header {
+    padding: 100px 0;
+  }
+
+  /* Adjust styles for h1 and p inside header */
+  h1 {
+    font-size: 60px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  /* Adjust styles for service */
+  .service {
+    width: 90%; /* Change the width as needed */
+  }
+}
+
+/* For screens between 768px and 1024px */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Add styles here for medium-sized screens */
+}
+
+/* For screens larger than 1024px */
+@media only screen and (min-width: 1024px) {
+  /* Add styles here for large screens */
+}
+
+    .service {
+      display: inline-block;
+      width: 30%;
+      padding: 20px;
+      margin: 20px;
+      background-color: #12372A;
+      /* Updated background color */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(72, 149, 239, 0.1);
+    }
+    .service img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    /* Testimonials Section */
+    .testimonials {
+      background-color: #436850;
+      /* Updated background color */
+      color: #fff;
+    }
+    .testimonial {
+      display: inline-block;
+      width: 30%;
+      padding: 20px;
+      margin: 20px;
+      background-color: #12372A;
+      /* Updated background color */
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    .testimonial img {
+      max-width: 100px;
+      min-width: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    /* Contact Section */
+    .contact {
+      background-color: #436850;
+      color: #FFF;
+      /* Updated background color */
+    }
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #12372A;
+      /* Updated background color */
+      border-radius: 10px;
+      color: #FFF;
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+      width: 85%;
+      padding: 7px;
+      margin: auto;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 20px;
+      background-color: #fff;
+    }
+    .contact-form input[type="submit"] {
+      background-color: #436850;
+      /* Updated background color */
+      color: #FFFFFF;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    .contact-form textarea {
+      resize: none;
+      color: #000;
+      /* Disable textarea resizing */
+    }
+    /* Gallery Section */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 300px;
+      height: auto;
+      margin: 10px;
+      border-radius: 10px;
+    }
+    /* Footer Styles */
+    footer {
+      background-color: #12372A;
+      /* Updated background color */
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+    /* Team Section */
+    .team {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .team-member {
+      flex: 1 1 300px;
+      padding: 20px;
+      margin: 20px;
+      background-color: #12372A;
+      /* Updated background color */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+    .team-member:hover {
+      transform: scale(1.1);
+    }
+    .team-member .contact-details {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px;
+      background-color: #436850;
+      color: white;
+      border-radius: 5px;
+    }
+    .team-member:hover .contact-details {
+      display: block;
+    }
+    .team-member:hover::after {
+      content: attr(data-phone-number);
+      /* Dynamically retrieve phone number from data attribute */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px;
+      background-color: #436850;
+      /* Updated background color to match theme */
+      color: white;
+      border-radius: 10px;
+    }
+    .team-member img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    /* Animation */
+    .animate {
+      opacity: 0;
+      transform: translateY(55px);
+      transition: opacity 3s ease, transform 5s ease;
+    }
+    .animated {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img class="header-image" src="https://i.postimg.cc/c4zqtJ0H/Sparkle-Shine-Car-Wash-Background-Green.png" alt="Header Image">
+  </header>
+  </div>
+  <div class="services">
+    <div class="section">
+      <h2>Our Services</h2>
+      <div class="service">
+        <img src="https://i.postimg.cc/c4QLZbtF/download-5.jpg" alt="Exterior Wash">
+        <h3>Exterior Wash</h3>
+        <p>Efficient cleaning of the exterior body of your car</p>
+      </div>
+      <div class="service">
+        <img src="https://i.postimg.cc/T1BfGrTM/download-4.jpg" alt="Interior Detailing">
+        <h3>Interior Detailing</h3>
+        <p>Thorough cleaning and detailing of the interior</p>
+      </div>
+      <div class="service">
+        <img src="https://i.postimg.cc/3JzPw8mh/download-2.jpg" alt="Waxing & Polishing">
+        <h3>Waxing & Polishing</h3>
+        <p>Restore shine and protect your car's paint</p>
+      </div>
+    </div>
+  </div>
+  <div class="section testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonial">
+      <img
+        src="data:image/jpeg;base64,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"
+        alt="Customer 1">
+      <p>"Great service! My car looks brand new!."</p>
+      <p>- Jeffrey Bezos</p>
+    </div>
+    <div class="testimonial">
+      <img src="https://i.pinimg.com/736x/0c/8f/f9/0c8ff9db33b4f75533ba68c8b9df85b6.jpg" alt="Customer 2">
+      <p>"Professional staff and excellent attention to detail."</p>
+      <p>- Jane Smith</p>
+    </div>
+    <div class="testimonial">
+      <img src="https://www.songhall.org/images/made/images/uploads/exhibits/Michael_Jackson_328_328_85_s_c1.jpg"
+        alt="Customer 3">
+      <p>"Highly recommended! Best car wash in town."</p>
+      <p>- Michael Jackson</p>
+    </div>
+  </div>
+  <div class="section contact">
+    <div class="contact-form">
+      <h2>Book Now</h2>
+      <form action="Contact.html" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required style="color: black;"><br>
+        <input type="email" name="email" placeholder="Your Email" required style="color: black;"><br>
+        <textarea name="message" placeholder="Your Cars Location" rows="4" required style="color: black;"></textarea><br>
+        <input type="submit" value="Send Booking" style="font-weight: bold; color: white;">
+      </form>
+    </div>
+  </div>
+  <div class="section">
+    <h2 style="color: white;">FAQs</h2>
+    <ul>
+      <li><strong style="color: white;">What are your operating hours?</strong><br>
+        <span style="color: white;">Our car wash is open from 8:00 AM to 6:00 PM, Monday to Saturday.</span>
+      </li>
+      <li><strong style="color: white;">Do you offer any discounts or promotions?</strong><br>
+        <span style="color: white;">Yes, we have special discounts for first-time customers and seasonal promotions.
+          Contact one of our Customer Service Managers for some of the avaliable offers.</span>
+      </li>
+      <li><strong style="color: white;">How often should I wax my car?</strong><br>
+        <span style="color: white;">We recommend waxing your car every 3-4 months to maintain a protective shine.</span>
+      </li>
+      <li><strong style="color: white;">Can I book an appointment online?</strong><br>
+        <span style="color: white;">Yes, you can easily book an appointment online through our website.</span>
+      </li>
+      <li><strong style="color: white;">Do you use eco-friendly cleaning products?</strong><br>
+        <span style="color: white;">Absolutely! We are committed to using environmentally friendly cleaning products to
+          minimize our impact on the planet.</span>
+      </li>
+    </ul>
+  </div>
+  <div class="section">
+    <h2>Gallery</h2>
+    <p>Check out some of our recent work:</p>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/300" alt="Gallery Image 1">
+      <img src="https://via.placeholder.com/300" alt="Gallery Image 2">
+      <img src="https://via.placeholder.com/300" alt="Gallery Image 3">
+      <img src="https://via.placeholder.com/300" alt="Gallery Image 4">
+      <img src="https://via.placeholder.com/300" alt="Gallery Image 5">
+      <img src="https://via.placeholder.com/300" alt="Gallery Image 6">
+      <img src="https://via.placeholder.com/300" alt="Gallery Image 7">
+      <img src="https://via.placeholder.com/300" alt="Gallery Image 8">
+    </div>
+  </div>
+  <div class="container" style="color: #FBFADA;">
+      <h1 class="text"><b>Deticated Washers</b></h1>
+  </div>
+  <div class="team">
+    <div class="team-member" data-phone-number="111-222-3333">
+      <img src="https://via.placeholder.com/150" alt="Team Member 1">
+      <h3>Bob Lee</h3>
+      <p>Car Wash Specialist</p>
+      <div class="contact-details" style="display: none;">
+        Contact us at: 111-222-3333
+      </div>
+    </div>
+    <div class="team-member" data-phone-number="444-555-6666">
+      <img src="https://via.placeholder.com/150" alt="Team Member 2">
+      <h3>Heather Kree</h3>
+      <p>Detailing Expert</p>
+      <div class="contact-details" style="display: none;">
+        Contact us at: 444-555-6666
+      </div>
+    </div>
+    <div class="team-member" data-phone-number="777-888-9999">
+      <img src="https://via.placeholder.com/150" alt="Team Member 3">
+      <h3>Duppa See</h3>
+      <p>Customer Service Manager</p>
+      <div class="contact-details" style="display: none;">
+        Contact us at: 777-888-9999
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p><b>&copy; 2023 Sparkle & Shine Car Wash. All rights reserved.</b></p>
+  </footer>
+  <script>
+    // Smooth scroll animations
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (sectionTop < windowHeight * 0.50) {
+          section.style.opacity = '1';
+          section.style.transform = 'translateY(0)';
+        }
+      });
+    });
+  </script>
+  <script>
+    // Animate elements on scroll
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.animate');
+      elements.forEach(element => {
+        if (element.getBoundingClientRect().top < window.innerHeight * 0.10) {
+          element.classList.add('animated');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('resize', animateOnScroll);
+    animateOnScroll();
+  </script>
+</body>
+
+</html>
